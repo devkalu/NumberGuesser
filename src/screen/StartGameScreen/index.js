@@ -9,10 +9,12 @@ import {
 
 import styles from "./styles";
 import Cards from "../../components/Cards";
+import ConfirmCard from "../../components/ConfirmCard";
 
 import GameCard from "../../components/GameCard";
+import BodyText from "../../components/BodyText";
 
-const StartGameScreen = () => {
+const StartGameScreen = ({ onStartGame }) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [confirmed, setConfirmed] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState();
@@ -36,11 +38,12 @@ const StartGameScreen = () => {
     setConfirmed(true);
     setSelectedNumber(chosenNumber);
     setEnteredValue("");
+    Keyboard.dismiss();
   };
   let confirmedOutput;
   if (confirmed) {
     confirmedOutput = (
-      <Text style={styles.chosenNumber}>Chosen Number: {selectedNumber}</Text>
+      <ConfirmCard selectedNumber={selectedNumber} onStart={onStartGame} />
     );
   }
 
@@ -51,7 +54,7 @@ const StartGameScreen = () => {
       }}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Start a New Game</Text>
+        <Text style={styles.title}>Input A Number To Start Game</Text>
         <Cards style={styles.inputContainer}>
           <GameCard
             onChangeText={inputHandler}

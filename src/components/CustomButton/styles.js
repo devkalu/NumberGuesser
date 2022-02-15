@@ -2,18 +2,18 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    width: "100%",
-    height: "12%",
+  container: {
+    paddingVertical: 15,
+    paddingHorizontal: 35,
     backgroundColor: colors.primary,
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 30,
+    borderRadius: 10,
   },
-  headerText: {
-    color: "black",
-    fontSize: 20,
-    fontFamily: "open-sans-bold",
+  buttonTitle: {
+    fontFamily: "open-sans",
+    fontSize: 18,
+    color: "white",
   },
 });
 

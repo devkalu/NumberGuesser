@@ -2,18 +2,17 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    width: "100%",
-    height: "12%",
-    backgroundColor: colors.primary,
+  numberContainer: {
+    borderWidth: 2,
+    borderColor: colors.primary,
+    padding: 10,
+    borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 30,
+    marginVertical: 10,
   },
-  headerText: {
-    color: "black",
-    fontSize: 20,
-    fontFamily: "open-sans-bold",
+  number: {
+    color: colors.primary,
   },
 });
 

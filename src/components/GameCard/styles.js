@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     color: colors.primary,
     fontWeight: "400",
     fontSize: 16,
+    fontFamily: "open-sans",
   },
 });
 
