@@ -4,7 +4,7 @@ import colors from "../../constants/colors";
 const styles = StyleSheet.create({
   headerContainer: {
     width: "100%",
-    height: "12%",
+    height: "15%",
     backgroundColor: colors.primary,
     alignItems: "center",
     justifyContent: "center",

@@ -5,6 +5,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Alert,
+  KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
 
 import styles from "./styles";
@@ -48,24 +50,28 @@ const StartGameScreen = ({ onStartGame }) => {
   }
 
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        Keyboard.dismiss();
-      }}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Input A Number To Start Game</Text>
-        <Cards style={styles.inputContainer}>
-          <GameCard
-            onChangeText={inputHandler}
-            value={enteredValue}
-            resetInputHandler={resetInputHandler}
-            confirmInputHandler={confirmInputHandler}
-          />
-        </Cards>
-        {confirmedOutput}
-      </View>
-    </TouchableWithoutFeedback>
+    <ScrollView>
+      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={35}>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            Keyboard.dismiss();
+          }}
+        >
+          <View style={styles.container}>
+            <Text style={styles.title}>Input A Number To Start Game</Text>
+            <Cards style={styles.inputContainer}>
+              <GameCard
+                onChangeText={inputHandler}
+                value={enteredValue}
+                resetInputHandler={resetInputHandler}
+                confirmInputHandler={confirmInputHandler}
+              />
+            </Cards>
+            {confirmedOutput}
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
